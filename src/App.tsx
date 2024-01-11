@@ -1,11 +1,5 @@
-import './App.css'
-
 const App = () => {
-  return (
-    <>
-      Howdy!
-    </>
-  )
-}
+  return <>Howdy!</>;
+};
 
-export default App
+export default App;
