@@ -1,0 +1,9 @@
+{
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 140,
+    "tabWidth": 4,
+    "endOfLine": "crlf",
+    "arrowParens": "avoid",
+    "plugins": ["prettier-plugin-organize-imports"]
+}
