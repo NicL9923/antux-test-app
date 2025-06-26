@@ -8,7 +8,7 @@ React + TypeScript + Vite + Fluent UI v9
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 22
 
 ### Installation
 
