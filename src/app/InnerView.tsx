@@ -20,7 +20,7 @@ const InnerView = () => {
             <Card>
                 <CardHeader
                     image={<Apps24Regular />}
-                    header={<Body1>Interactive Counter</Body1>}
+                    header={<Body1>Interactive counter</Body1>}
                     description={<Caption1>Click the button to increment the counter</Caption1>}
                 />
                 <div>
