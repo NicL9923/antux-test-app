@@ -1,40 +1,55 @@
-import { Body1, Button, Caption1, Card, CardHeader } from '@fluentui/react-components';
-import { Apps24Regular } from '@fluentui/react-icons';
-import { useState } from 'react';
-
-// TODO: Set up a copilot chat so we can extend it with maybe actually useful stuff at some point
-// TODO: "Team spirit" section - about the sub-teams, etc
-// TODO: Stupid simple minigames
-// TODO: Tools section -> Central "Who do I call" list
+import { Body1, Caption1, Card, CardHeader } from '@fluentui/react-components';
+import { Bot24Regular, Games24Regular, People24Regular, Wrench24Regular } from '@fluentui/react-icons';
 
 const InnerView = () => {
-    const [count, setCount] = useState(0);
-
     return (
-        <div>
-            <header>
-                <h1>🚀 Antux Test App</h1>
-                <Body1>Built with React, Vite, TypeScript & Fluent UI v9</Body1>
+        <div style={{ minHeight: '100vh', padding: '20px' }}>
+            <header style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <h1>📎 AntUX Test App</h1>
             </header>
 
-            <Card>
-                <CardHeader
-                    image={<Apps24Regular />}
-                    header={<Body1>Interactive counter</Body1>}
-                    description={<Caption1>Click the button to increment the counter</Caption1>}
-                />
-                <div>
-                    <Body1>Current count: {count}</Body1>
-                    <Button appearance="primary" onClick={() => setCount(count => count + 1)}>
-                        Increment Counter
-                    </Button>
-                </div>
-            </Card>
+            <div
+                style={{
+                    display: 'grid',
+                    gap: '24px',
+                    gridTemplateColumns: 'repeat(2, 1fr)',
+                    maxWidth: '800px',
+                    margin: '0 auto',
+                    padding: '20px 0',
+                }}
+            >
+                <Card>
+                    <CardHeader
+                        image={<People24Regular />}
+                        header={<Body1>Meet the team</Body1>}
+                        description={<Caption1>Get to know the team members and sub-teams</Caption1>}
+                    />
+                </Card>
 
-            <Card>
-                <CardHeader header={<Body1>Tech Stack</Body1>} description={<Caption1>This app is ready for Azure deployment</Caption1>} />
-                Howdy
-            </Card>
+                <Card>
+                    <CardHeader
+                        image={<Wrench24Regular />}
+                        header={<Body1>Tools</Body1>}
+                        description={<Caption1>Useful tools and Central on-call "Who do I call" directory</Caption1>}
+                    />
+                </Card>
+
+                <Card>
+                    <CardHeader
+                        image={<Bot24Regular />}
+                        header={<Body1>AI</Body1>}
+                        description={<Caption1>AI-powered features and copilot integrations</Caption1>}
+                    />
+                </Card>
+
+                <Card>
+                    <CardHeader
+                        image={<Games24Regular />}
+                        header={<Body1>Minigames</Body1>}
+                        description={<Caption1>Simple games and interactive activities</Caption1>}
+                    />
+                </Card>
+            </div>
         </div>
     );
 };

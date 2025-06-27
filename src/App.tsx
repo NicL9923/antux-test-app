@@ -1,5 +1,6 @@
 import { FluentProvider, webDarkTheme, webLightTheme } from '@fluentui/react-components';
 import { useEffect, useState } from 'react';
+import './App.css';
 import InnerView from './app/InnerView';
 import { isSystemDarkTheme } from './app/Utilities/Browser';
 
@@ -11,7 +12,7 @@ function App() {
     }, []);
 
     return (
-        <FluentProvider theme={isDark ? webDarkTheme : webLightTheme}>
+        <FluentProvider theme={isDark ? webDarkTheme : webLightTheme} style={{ minHeight: '100vh', width: '100%' }}>
             <InnerView />
         </FluentProvider>
     );
