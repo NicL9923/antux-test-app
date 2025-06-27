@@ -1,7 +1,7 @@
 import { Body1, Caption1, Card, CardHeader } from '@fluentui/react-components';
 import { Bot24Regular, Games24Regular, People24Regular, Wrench24Regular } from '@fluentui/react-icons';
 
-const InnerView = () => {
+const Home = () => {
     return (
         <div style={{ minHeight: '100vh', padding: '20px' }}>
             <header style={{ textAlign: 'center', marginBottom: '40px' }}>
@@ -54,4 +54,4 @@ const InnerView = () => {
     );
 };
 
-export default InnerView;
+export default Home;
