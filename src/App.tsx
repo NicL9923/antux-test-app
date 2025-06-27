@@ -5,6 +5,7 @@ import './App.css';
 import Home from './app/Home';
 import AI from './app/pages/AI/AI';
 import Minigames from './app/pages/Minigames/Minigames';
+import NumberGuessingGame from './app/pages/Minigames/NumberGuessingGame';
 import Team from './app/pages/Team/Team';
 import Tools from './app/pages/Tools/Tools';
 import { isSystemDarkTheme } from './app/Utilities/Browser';
@@ -25,6 +26,8 @@ function App() {
                     <Route path="/tools" element={<Tools />} />
                     <Route path="/ai" element={<AI />} />
                     <Route path="/minigames" element={<Minigames />} />
+                    <Route path="/minigames/number-guessing" element={<NumberGuessingGame />} />
+                    <Route path="*" element={<Home />} />
                 </Routes>
             </Router>
         </FluentProvider>

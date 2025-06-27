@@ -1,15 +1,10 @@
 import { Body1, Caption1, Card, CardHeader } from '@fluentui/react-components';
 import { Calculator24Regular } from '@fluentui/react-icons';
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import BackButton from '../../Controls/BackButton';
-import NumberGuessingGame from './NumberGuessingGame';
 
 const Minigames = () => {
-    const [selectedGame, setSelectedGame] = useState<string | null>(null);
-
-    if (selectedGame === 'number-guessing') {
-        return <NumberGuessingGame onBack={() => setSelectedGame(null)} />;
-    }
+    const navigate = useNavigate();
 
     return (
         <div style={{ minHeight: '100vh', padding: '20px' }}>
@@ -29,7 +24,7 @@ const Minigames = () => {
                     margin: '0 auto',
                 }}
             >
-                <Card style={{ cursor: 'pointer' }} onClick={() => setSelectedGame('number-guessing')}>
+                <Card style={{ cursor: 'pointer' }} onClick={() => navigate('/minigames/number-guessing')}>
                     <CardHeader
                         image={<Calculator24Regular />}
                         header={<Body1>Number Guessing Game</Body1>}
