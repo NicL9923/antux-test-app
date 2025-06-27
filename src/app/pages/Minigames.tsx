@@ -1,15 +1,10 @@
-import { Body1, Button } from '@fluentui/react-components';
-import { ArrowLeft24Regular } from '@fluentui/react-icons';
-import { useNavigate } from 'react-router-dom';
+import { Body1 } from '@fluentui/react-components';
+import BackButton from '../Controls/BackButton';
 
 const Minigames = () => {
-    const navigate = useNavigate();
-
     return (
         <div style={{ minHeight: '100vh', padding: '20px' }}>
-            <Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => navigate('/')} style={{ marginBottom: '20px' }}>
-                Back to Home
-            </Button>
+            <BackButton />
 
             <header style={{ textAlign: 'center', marginBottom: '40px' }}>
                 <h1>🎮 Minigames</h1>
