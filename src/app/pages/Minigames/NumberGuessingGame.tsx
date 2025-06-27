@@ -2,11 +2,13 @@ import { Body1, Button, Caption1, Card, Input } from '@fluentui/react-components
 import { useState } from 'react';
 import BackButton from '../../Controls/BackButton';
 
+const initialMessage = "I'm thinking of a number between 1 and 100. Can you guess it?";
+
 const NumberGuessingGame = () => {
-    const [targetNumber] = useState(() => Math.floor(Math.random() * 100) + 1);
+    const [targetNumber, setTargetNumber] = useState(() => Math.floor(Math.random() * 100) + 1);
     const [guess, setGuess] = useState('');
     const [attempts, setAttempts] = useState(0);
-    const [message, setMessage] = useState("I'm thinking of a number between 1 and 100. Can you guess it?");
+    const [message, setMessage] = useState(initialMessage);
     const [gameWon, setGameWon] = useState(false);
 
     const handleGuess = () => {
@@ -35,10 +37,9 @@ const NumberGuessingGame = () => {
     const resetGame = () => {
         setGuess('');
         setAttempts(0);
-        setMessage("I'm thinking of a number between 1 and 100. Can you guess it?");
+        setMessage(initialMessage);
         setGameWon(false);
-        // Generate new target number
-        window.location.reload(); // Simple way to reset the component with new random number
+        setTargetNumber(Math.floor(Math.random() * 100) + 1);
     };
 
     const handleKeyPress = (e: React.KeyboardEvent) => {
