@@ -6,13 +6,22 @@ interface BackButtonProps {
     to?: string;
     style?: React.CSSProperties;
     children?: React.ReactNode;
+    onClick?: () => void;
 }
 
-const BackButton = ({ to = '/', style, children = 'Back to Home' }: BackButtonProps) => {
+const BackButton = ({ to = '/', style, children = 'Back to Home', onClick }: BackButtonProps) => {
     const navigate = useNavigate();
 
+    const handleClick = () => {
+        if (onClick) {
+            onClick();
+        } else {
+            navigate(to);
+        }
+    };
+
     return (
-        <Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={() => navigate(to)} style={{ marginBottom: '20px', ...style }}>
+        <Button appearance="subtle" icon={<ArrowLeft24Regular />} onClick={handleClick} style={{ marginBottom: '20px', ...style }}>
             {children}
         </Button>
     );

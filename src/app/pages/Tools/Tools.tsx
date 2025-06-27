@@ -1,5 +1,5 @@
 import { Body1 } from '@fluentui/react-components';
-import BackButton from '../Controls/BackButton';
+import BackButton from '../../Controls/BackButton';
 
 const Tools = () => {
     return (

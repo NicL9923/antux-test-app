@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './app/Home';
-import AI from './app/pages/AI';
-import Minigames from './app/pages/Minigames';
-import Team from './app/pages/Team';
-import Tools from './app/pages/Tools';
+import AI from './app/pages/AI/AI';
+import Minigames from './app/pages/Minigames/Minigames';
+import Team from './app/pages/Team/Team';
+import Tools from './app/pages/Tools/Tools';
 import { isSystemDarkTheme } from './app/Utilities/Browser';
 
 function App() {
