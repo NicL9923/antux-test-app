@@ -1,6 +1,13 @@
 import { FluentProvider, webDarkTheme, webLightTheme } from '@fluentui/react-components';
 import { useEffect, useState } from 'react';
-import InnerView from './app/InnerView';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import './App.css';
+import Home from './app/Home';
+import AI from './app/pages/AI/AI';
+import Minigames from './app/pages/Minigames/Minigames';
+import NumberGuessingGame from './app/pages/Minigames/NumberGuessingGame';
+import Team from './app/pages/Team/Team';
+import Tools from './app/pages/Tools/Tools';
 import { isSystemDarkTheme } from './app/Utilities/Browser';
 
 function App() {
@@ -11,8 +18,18 @@ function App() {
     }, []);
 
     return (
-        <FluentProvider theme={isDark ? webDarkTheme : webLightTheme}>
-            <InnerView />
+        <FluentProvider theme={isDark ? webDarkTheme : webLightTheme} style={{ minHeight: '100vh', width: '100%' }}>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/team" element={<Team />} />
+                    <Route path="/tools" element={<Tools />} />
+                    <Route path="/ai" element={<AI />} />
+                    <Route path="/minigames" element={<Minigames />} />
+                    <Route path="/minigames/number-guessing" element={<NumberGuessingGame />} />
+                    <Route path="*" element={<Home />} />
+                </Routes>
+            </Router>
         </FluentProvider>
     );
 }
