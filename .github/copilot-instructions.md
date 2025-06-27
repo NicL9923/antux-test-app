@@ -8,7 +8,7 @@
 
 ## Coding-specific instructions
 
-- None yet!
+- Use Fluent UI (v9) components wherever possible
 
 ## Review-specific instructions
 
